@@ -1,0 +1,77 @@
+var attrs = [
+	{
+		name:'client', 
+		id_column_name:'id', 
+		lookup_table:'lk_clients', 
+		table_list:[
+			{
+				table_name:'bt_sales',
+				id_column_name:'id_client'
+			},
+			{
+				table_name:'lk_clients',
+				id_column_name:'id'
+			}
+		]
+	},
+	{
+		name:'salesman', 
+		id_column_name:'id', 
+		lookup_table:'lk_salesmen', 
+		table_list:[
+			{
+				table_name:'bt_sales',
+				id_column_name:'id_salesman'
+			},
+			{
+				table_name:'lk_salesmen',
+				id_column_name:'id'	
+			},
+			{
+				table_name:'bt_calls',
+				id_column_name:'id_salesman'	
+			},
+			{
+				table_name:'bt_breaks',
+				id_column_name:'id_salesman'	
+			}
+		]
+	},
+	{
+		name:'office', 
+		id_column_name:'id', 
+		lookup_table:'lk_offices', 
+		table_list:[
+			{
+				table_name:'lk_clients',
+				id_column_name:'id_office'
+			},
+			{
+				table_name:'lk_offices',
+				id_column_name:'id'
+			}
+		]
+	}
+];
+
+var metrics = [
+	{
+		name:'sales', 
+		id_column_name:'sales', 
+		agg_function:'sum(sales)',  
+		base_table:'bt_sales'
+	},
+	{
+		name:'calls', 
+		id_column_name:'calls', 
+		agg_function:'sum(calls)',  
+		base_table:'bt_calls'
+	},
+	{
+		name:'breaks', 
+		id_column_name:'breaks', 
+		agg_function:'avg(breaks)',  
+		base_table:'bt_breaks'
+	}
+];
+

@@ -1,0 +1,5 @@
+ice-skate.js
+
+Define reports as json objects and use skate() to generate the SQL query. 
+
+For the report format check example_report.js
