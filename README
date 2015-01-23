@@ -1,4 +1,4 @@
-ice-skate.js (WORK IN PROGRESS)
+ice-skate.js
 
 Define reports as json objects and use skate() to generate the SQL query. 
 
